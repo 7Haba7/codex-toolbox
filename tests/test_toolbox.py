@@ -56,3 +56,10 @@ class ToolboxTests(unittest.TestCase):
             self.assertEqual(len(clipped), 100)
             self.assertTrue(clipped.endswith("[truncated]\n"))
             self.assertNotEqual(summary("--limit", "99").returncode, 0)
+
+            for i in range(50):
+                (repo / (f"change-{i:02d}-" + "x" * 75)).touch()
+            full = summary()
+            self.assertEqual(full.returncode, 0, full.stderr)
+            self.assertGreater(len(full.stdout), 4000)
+            self.assertNotIn("[truncated]", full.stdout)

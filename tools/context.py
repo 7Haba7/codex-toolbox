@@ -6,7 +6,8 @@ import sys
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--limit", type=int, default=4000, help="maximum output characters")
+    parser.add_argument("--limit", type=int, default=8_000_000_000,
+                        help="maximum output characters (default: %(default)s)")
     parser.add_argument("--path", help="limit the summary to a literal repository path")
     args = parser.parse_args()
     if args.limit < 100:
