@@ -10,3 +10,8 @@ Personal Codex AI toolkit: skills, memory, automation and development tools.
 Для сводки по одной папке или файлу используй `python3 tools/context.py --path tools --limit 1000`. Путь отсчитывается от рабочего каталога. Чтобы продолжить предыдущую задачу, попроси Codex прочитать HANDOFF.md.
 
 Автопроверки запускаются при push и pull request. Локальный запуск на Python 3.11 или новее: `python3 -m unittest discover -s tests -v`.
+
+## План в ChatGPT, выполнение в Codex
+
+1. В ChatGPT с доступом к GitHub попроси составить план для этого репозитория и записать его в раздел «Текущая задача» файла `HANDOFF.md`. Для передачи достаточно цели, нужных файлов, шагов и команд проверки. Если план уже есть, его можно сразу вставить в чат Codex.
+2. Открой в Codex ветку с сохранённым планом и напиши «Выполни план из HANDOFF.md».
